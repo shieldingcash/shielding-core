@@ -19,50 +19,24 @@ module.exports = {
       port: 8545, // Standard Ethereum port (default: none)
       network_id: '*', // Any network (default: none)
     },
-    kovan: {
+    donau: {
       provider: () =>
         new HDWalletProvider(
           process.env.PRIVATE_KEY,
-          'https://kovan.infura.io/v3/97c8bf358b9942a9853fab1ba93dc5b3',
+          'https://pre-rpc.bt.io/',
         ),
-      network_id: 42,
+      network_id: 1029,
       gas: 6000000,
-      gasPrice: utils.toWei('1', 'gwei'),
-      // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
-    },
-    goerli: {
-      provider: () =>
-        new HDWalletProvider(
-          process.env.PRIVATE_KEY,
-          'https://goerli.infura.io/v3/d34c08f2cb7c4111b645d06ac7e35ba8',
-        ),
-      network_id: 5,
-      gas: 6000000,
-      gasPrice: utils.toWei('1', 'gwei'),
-      // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
-    },
-    rinkeby: {
-      provider: () =>
-        new HDWalletProvider(
-          process.env.PRIVATE_KEY,
-          'https://rinkeby.infura.io/v3/97c8bf358b9942a9853fab1ba93dc5b3',
-        ),
-      network_id: 4,
-      gas: 6000000,
-      gasPrice: utils.toWei('1', 'gwei'),
+      gasPrice: utils.toWei('300000', 'gwei'),
       // confirmations: 0,
       // timeoutBlocks: 200,
       skipDryRun: true,
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'http://ethereum-rpc.trustwalletapp.com'),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://rpc.bittorrentchain.io'),
       network_id: 1,
       gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gasPrice: utils.toWei('300000', 'gwei'),
       // confirmations: 0,
       // timeoutBlocks: 200,
       skipDryRun: true,
