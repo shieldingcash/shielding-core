@@ -33,8 +33,8 @@ module.exports = {
       skipDryRun: true,
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://rpc.bittorrentchain.io'),
-      network_id: 1,
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://bttc.trongrid.io'),
+      network_id: 199,
       gas: 6000000,
       gasPrice: utils.toWei('300000', 'gwei'),
       // confirmations: 0,
