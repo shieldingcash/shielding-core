@@ -17,7 +17,7 @@ function init() {
 
 async function deploy(name, abi, bytecode, params=[]) {
   let args = {
-    feeLimit: 500000000,
+    feeLimit: 5000000000,
     callValue: 0,
     tokenId: "",
     tokenValue: 0,
