@@ -16,8 +16,11 @@ function init() {
 }
 
 async function query() {
-  let instance = await tronWeb.contract().at('TPC5P7qJWT7N68cxY8NcmZjo8jvNR3rvit');
-  console.log(await instance.methods.MiMCSponge(123, 234).call())
+  let instance = await tronWeb.contract().at('TFQ8dsNqkQL5dRDjD9ZoMPSXsghdcAKc77');
+  console.log((await instance.methods.denomination().call()).toNumber())
+
+  // let instance = await tronWeb.contract().at('TPC5P7qJWT7N68cxY8NcmZjo8jvNR3rvit');
+  // console.log(await instance.methods.MiMCSponge(123, 234).call())
 }
 
 function main() {
