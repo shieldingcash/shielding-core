@@ -9,8 +9,8 @@ if [[ `uname` == 'Darwin' ]]; then
   TAR="solidity-mac_0.7.7_Bacon_v4.3.zip"
   EXEC_NAME="solc"
 elif [[ `uname` == 'Linux' ]]; then
-  URL="https://github.com/tronprotocol/solidity/releases/download/tv_0.8.11/solidity-linux_0.8.11_Rousseau_v4.4.zip"
-  TAR="solidity-linux_0.8.11_Rousseau_v4.4.zip"
+  URL="https://github.com/tronprotocol/solidity/releases/download/tv_0.7.7/solidity-linux_0.7.7_Bacon_v4.3.zip"
+  TAR="solidity-linux_0.7.7_Bacon_v4.3.zip"
   EXEC_NAME="solc-static-linux"
 fi
 
