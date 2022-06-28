@@ -41,6 +41,41 @@ npx truffle migrate --network donau -f 5 --to=5  // testnet
 npx truffle migrate --network mainnet -f 5 --to=5  // mainnet
 ```
 
+### How to deploy A new instance on TRON
+
+1. Build contract
+
+```
+npm run install
+npm run build:tron-contract
+```
+
+2. Prepare you env
+```
+export PRIVATE_KEY=
+export RPC_URL=
+export CONTRACT_PATH=
+```
+
+3. Deploy tron contract
+
+Step 1: Deploy verifier and hasher contract(Note: only run once each net).
+
+```
+node scripts/tronDeploy.js --contract_name Verifier setup
+node scripts/tronDeploy.js --contract_name Hasher setup
+```
+
+Step2: Deploy TRON instance contract
+
+> NILE Testnet
+
+```
+node scripts/tronDeploy.js --contract_name ETHTornado --verifier_address TBwm5yVpkvGBdZUcowaWZKFVZvTAvZsfWS --hasher_address TPC5P7qJWT7N68cxY8NcmZjo8jvNR3rvit --pool_size 10000000 setup 
+```
+ 
+
+
 ### Deployed contract list
 
 | Net name | Token | amount | address |
@@ -52,7 +87,6 @@ npx truffle migrate --network mainnet -f 5 --to=5  // mainnet
 | | | | |
 | BTTC mainnet | BTT | 100000000 | 0xA34C619bEC89218cbb7dE9940190b3e3cD196d52 | 
 |  | BTT | 1000000000 | 0x33804B6E0fA783b2d064F30748F36124c2027549 |
-
-
-
-
+| | | | |
+| TRON testnet | TRX | 10 | TFQ8dsNqkQL5dRDjD9ZoMPSXsghdcAKc77 |
+| | | | |

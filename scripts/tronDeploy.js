@@ -63,8 +63,21 @@ function deploy_fromfile(contract_name, abi_file, bin_file, params=[]) {
   deploy(contract_name, abi, bytecode, params)
 }
 
+function deploy_tornado(contract_name, abi_file, bin_file, params=[]) {
+  let abi = fs.readFileSync(contractPath + "/" + abi_file).toString()
+  abi = "{\"entrys\":" + abi + "}"
+  let bytecode = fs.readFileSync(contractPath + '/' + bin_file).toString()
+
+  deploy(contract_name, abi, bytecode, params)
+}
+
 function main() {
-  program.option('-c --contract_name <contract name>', 'Hasher')
+  program
+    .option('-c --contract_name <contract name>', 'Hasher')
+    .option('-v --verifier_address <verifier address>', 'TBwm5yVpkvGBdZUcowaWZKFVZvTAvZsfWS')
+    .option('-h --hasher_address <hasher address>', 'TPC5P7qJWT7N68cxY8NcmZjo8jvNR3rvit')
+    .option('-e --erc20_address <erc20 address>', '')
+    .option('-p --pool_size <pool size>', 10000000)
 
   program
     .command('setup')
@@ -76,7 +89,11 @@ function main() {
       } else if (contract_name == 'Verifier') {
 	deploy_fromfile(contract_name, contract_name + ".abi", contract_name + ".bin")
       } else if (contract_name == 'ETHTornado') {
+	let params = [program.verifier_address, program.hasher_address, program.pool_size, 20]
+	deploy_tornado(contract_name, contract_name + ".abi", contract_name + ".bin", params)
       } else if (contract_name == 'ERC20Tornado') {
+	let params = [program.verifier_address, program.hasher_address, program.pool_size, 20, program.erc20_address]
+	deploy_tornado(contract_name, contract_name + ".abi", contract_name + ".bin", params)
       } else {
 	console.log(`unkown contract name: ${contract_name}`)
       }
