@@ -1,4 +1,4 @@
-### Fork from [tornado.cache](https://github.com/tornadocash/tornado-core)
+### Fork from [tornado.cash](https://github.com/tornadocash/tornado-core)
 
 ### How to deploy A new instance on BTTC
 
