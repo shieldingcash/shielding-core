@@ -35,6 +35,7 @@ ${SOLC_BIN} --optimize --overwrite --abi --bin ${PROJ_PATH}/tron-contracts/Verif
 ${SOLC_BIN} --optimize --overwrite --abi --bin ${PROJ_PATH}/tron-contracts/ETHTornado.sol -o ${PROJ_PATH}/build/tron-contracts
 ${SOLC_BIN} --optimize --overwrite --abi --bin ${PROJ_PATH}/tron-contracts/ERC20Tornado.sol -o ${PROJ_PATH}/build/tron-contracts
 
-node ${CURR_PATH}/compileHasher.js
-cp ${PROJ_PATH}/build/Hasher.json ${PROJ_PATH}/build/tron-contracts
+node ${CURR_PATH}/compileTronHasher.js 
+#node ${CURR_PATH}/compileHasher.js
+#cp ${PROJ_PATH}/build/Hasher.json ${PROJ_PATH}/build/tron-contracts
 
