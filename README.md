@@ -1,4 +1,5 @@
 ### Fork from [tornado.cash](https://github.com/tornadocash/tornado-core)
+[![build](https://github.com/shieldingcash/shielding-core/actions/workflows/build.yml/badge.svg)](https://github.com/shieldingcash/shielding-core/actions/workflows/build.yml)
 
 ### How to deploy A new instance on BTTC
 
